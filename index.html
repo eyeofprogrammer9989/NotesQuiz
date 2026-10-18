@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoteQuiz</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="notebook">
+      <h1>NoteQuiz</h1>
+      <p class="subtitle">Turn your notes into a quiz to practice for tests.</p>
+
+      <div id="errorBox" class="message-box error-message hidden"></div>
+
+      <div class="form-group">
+        <label for="notesInput">Paste your notes here:</label>
+        <textarea
+          id="notesInput"
+          placeholder="Type or paste your notes here. You can use full sentences or write lines like 'Mitochondria: The powerhouse of the cell'."
+        ></textarea>
+      </div>
+
+      <div class="file-box">
+        <label for="fileInput">Or upload a .txt or .pdf file:</label>
+        <input type="file" id="fileInput" accept=".txt,.pdf,text/plain,application/pdf" />
+      </div>
+
+      <div class="count-row">
+        <label for="questionCountSelect">Pick how many questions:</label>
+        <select id="questionCountSelect">
+          <option value="5">5 questions</option>
+          <option value="10" selected>10 questions</option>
+          <option value="15">15 questions</option>
+          <option value="20">20 questions</option>
+          <option value="custom">Custom number</option>
+        </select>
+        <input
+          type="number"
+          id="customCountInput"
+          min="1"
+          max="50"
+          placeholder="Number"
+          style="display: none;"
+        />
+      </div>
+
+      <div>
+        <button type="button" id="startQuizBtn" class="primary-btn">Start quiz</button>
+      </div>
+    </div>
+
+    <!-- PDF.js reads text out of PDF files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
