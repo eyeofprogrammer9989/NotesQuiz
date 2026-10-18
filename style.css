@@ -1,0 +1,368 @@
+/* NoteQuiz - School Notebook Stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f2ede4;
+  color: #333333;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 20px 10px;
+}
+
+/* Notebook Page Container */
+.notebook {
+  max-width: 720px;
+  margin: 20px auto;
+  background-color: #faf7ee;
+  /* Faint blue-grey ruled lines */
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 29px,
+    #d9d3c7 29px,
+    #d9d3c7 30px
+  );
+  border: 1px solid #cfc7b8;
+  border-radius: 2px;
+  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.08);
+  position: relative;
+  padding: 30px 25px 40px 65px;
+}
+
+/* Red margin line on the left */
+.notebook::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 45px;
+  width: 2px;
+  background-color: #d96b6b;
+}
+
+/* Headings in handwritten style */
+h1, h2, h3 {
+  font-family: 'Patrick Hand', cursive, sans-serif;
+  color: #1a365d; /* ink blue */
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 38px;
+  margin-bottom: 4px;
+}
+
+h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #555555;
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+/* Form inputs & text areas */
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #1a365d;
+  font-size: 15px;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  background-color: #ffffff;
+  border: 1.5px solid #4a5568;
+  border-radius: 3px;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #222222;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+textarea:focus, select:focus, input:focus {
+  outline: 2px solid #1a365d;
+}
+
+/* File upload row */
+.file-box {
+  margin: 16px 0;
+  padding: 12px;
+  background-color: #ffffff;
+  border: 1px dashed #718096;
+}
+
+.file-box input[type="file"] {
+  font-size: 14px;
+}
+
+/* Question count row */
+.count-row {
+  margin: 18px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+select, input[type="number"] {
+  padding: 8px 10px;
+  border: 1.5px solid #4a5568;
+  border-radius: 3px;
+  background-color: #ffffff;
+  font-size: 14px;
+  color: #222222;
+}
+
+input[type="number"] {
+  width: 90px;
+}
+
+/* Buttons styled like simple stationery */
+button, .btn-link {
+  display: inline-block;
+  padding: 9px 18px;
+  font-size: 15px;
+  font-family: inherit;
+  font-weight: 600;
+  color: #1a365d;
+  background-color: #ffffff;
+  border: 2px solid #2d3748;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 1px 2px 0px #2d3748;
+}
+
+button:hover, .btn-link:hover {
+  background-color: #fef08a; /* highlighter yellow */
+}
+
+button:active, .btn-link:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #ececec;
+}
+
+.primary-btn {
+  background-color: #fef08a; /* highlighter yellow */
+  font-size: 17px;
+  padding: 10px 22px;
+}
+
+.primary-btn:hover {
+  background-color: #fde047;
+}
+
+/* Plain notice and error box */
+.message-box {
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  border: 1px solid #333333;
+  background-color: #ffffff;
+}
+
+.error-message {
+  border-color: #b91c1c;
+  color: #991b1b;
+  background-color: #fff1f2;
+}
+
+.notice-message {
+  border-color: #854d0e;
+  color: #713f12;
+  background-color: #fef9c3;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Quiz Page Layout */
+.quiz-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #4a5568;
+  font-weight: bold;
+}
+
+.question-text {
+  font-size: 18px;
+  color: #1a365d;
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+.blank-space {
+  display: inline-block;
+  padding: 0 8px;
+  border-bottom: 2px solid #1a365d;
+  font-weight: bold;
+}
+
+/* Options */
+.options-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 14px;
+  background-color: #ffffff;
+  border: 1.5px solid #4a5568;
+  border-radius: 4px;
+  font-size: 15px;
+  color: #222222;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.option-item:hover {
+  background-color: #fef08a; /* highlighter yellow */
+}
+
+.option-item.selected {
+  background-color: #fef08a;
+  border: 2px solid #1a365d;
+  font-weight: bold;
+}
+
+.option-label {
+  width: 24px;
+  font-weight: bold;
+  color: #1a365d;
+}
+
+/* Results Page */
+.score-box {
+  background-color: #ffffff;
+  border: 2px solid #1a365d;
+  padding: 16px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.score-number {
+  font-family: 'Patrick Hand', cursive, sans-serif;
+  font-size: 42px;
+  color: #1a365d;
+}
+
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.review-item {
+  background-color: #ffffff;
+  border: 1px solid #718096;
+  padding: 14px;
+}
+
+.review-item.was-correct {
+  border-left: 5px solid #2e7d32;
+}
+
+.review-item.was-wrong {
+  border-left: 5px solid #c62828;
+}
+
+.review-q-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #1a365d;
+}
+
+.answer-line {
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.user-ans {
+  font-weight: bold;
+}
+
+.correct-ans {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.wrong-ans {
+  color: #c62828;
+}
+
+.actions-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 600px) {
+  body {
+    padding: 10px 4px;
+  }
+
+  .notebook {
+    padding: 20px 14px 30px 42px;
+    margin: 10px auto;
+  }
+
+  .notebook::before {
+    left: 28px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .count-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* keep the line break between "Fill in the blank:" and the sentence */
+.question-text,
+.review-q-title {
+  white-space: pre-line;
+}
