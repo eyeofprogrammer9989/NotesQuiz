@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoteQuiz - Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="notebook">
+      <h1>NoteQuiz</h1>
+
+      <!-- Notice when notes had fewer questions than requested -->
+      <div id="noticeBox" class="message-box notice-message hidden"></div>
+
+      <div class="quiz-meta">
+        <span id="progressText">Question 1 of 10</span>
+      </div>
+
+      <h2 id="questionPrompt" class="question-text">Loading question...</h2>
+
+      <div id="optionsBox" class="options-group">
+        <!-- Options A, B, C, D will appear here -->
+      </div>
+
+      <div>
+        <button type="button" id="nextBtn" class="primary-btn" disabled>Next</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
